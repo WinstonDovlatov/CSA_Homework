@@ -2,8 +2,6 @@
 #include "tools.h"
 #include "container.h"
 #include <ctime>
-#include <iostream>
-
 
 FILE *getFile(char *file_name, const char *mode) {
     FILE *file = fopen(file_name, mode);
