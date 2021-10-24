@@ -1,0 +1,27 @@
+int: 4
+char*: 8
+
+class transport {
+union: 8 [0]
+int velocity: 4 [8]
+int distance: 4 [12]
+}
+
+class plane {
+int maxDistance: 4[0]
+int capacity: 4[4]
+}
+
+class train {
+int carsNumber: 4[0]
+}
+
+class ship {
+int displacement: 4[0]
+enum type: 4[4]
+}
+
+class container {
+int size: 4 [0]
+transport** transports: 8 [4]
+}

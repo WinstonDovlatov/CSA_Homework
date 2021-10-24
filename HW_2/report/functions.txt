@@ -1,0 +1,24 @@
+main {
+int argc: 4 [0]
+char** argv: 8 [4]
+bool from_file: 1 [12]
+int container_size: 4 [13]
+clock_t start_time: 4 [17]
+container container: 12 [21]
+clock_t total_time: 4 [33]
+}
+
+getFile {
+FILE* file: 8 [0]
+char mode: 1 [8]
+}
+
+container::Read {
+FILE* file: 8 [0]
+char* transport_name: 8 [8]
+}
+
+container::Write {
+FILE* film: 8 [0]
+}
+
