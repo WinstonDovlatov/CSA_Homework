@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
         from_file = false;
         container_size = atoi(argv[2]);
         if (container_size > 10000 || container_size < 1) {
-            printf("%s", "Error! Size must be greater than 1 and less than 10000\n");
+            printf("%s", "Error! Size in interval [1, 10000].\n");
             return 1;
         }
     } else {
