@@ -9,18 +9,16 @@ class ShipType(enum.Enum):
     TANKER = 3
 
 
-str_to_type = {"LINER": ShipType.LINER, "TOW": ShipType.TOW, "TANKER": ShipType.TANKER}
-
-
 class Ship(Transport):
     def __init__(self, params=None):
         super().__init__(params)
+        self.str_to_type = {"LINER": ShipType.LINER, "TOW": ShipType.TOW, "TANKER": ShipType.TANKER}
         if params is None:
             self.type = ShipType.LINER
             self.displacement = 0
         else:
             self.displacement = int(params[2])
-            self.type = str_to_type[params[3]]
+            self.type = self.str_to_type[params[3]]
 
     def generate(self):
         super().generate()

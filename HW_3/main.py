@@ -41,7 +41,7 @@ if __name__ == '__main__':
         print('done')
 
         t_end = time.time()
-        print(f"Passed {round((t_end - t_start)*1000)}ms")
+        print(f"Passed {round((t_end - t_start) * 1000)}ms")
 
     except InvalidArgsError as err:
         print(f"Invalid args. Excepted '-f path_in path_out1 path_out2' or '-n size path_out1 path_out2'. {err}")
@@ -49,4 +49,3 @@ if __name__ == '__main__':
         print(f"File error. {err}")
     except() as err:
         print(f"Error. {err}")
-

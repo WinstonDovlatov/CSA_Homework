@@ -3,13 +3,12 @@ from Ship import Ship
 from Train import Train
 import random
 
-str_to_transport = {'Plane': Plane, 'Ship': Ship, 'Train': Train}
-
 
 class Container:
     def __init__(self):
         self.size = 0
         self.transports = []
+        self.str_to_transport = {'Plane': Plane, 'Ship': Ship, 'Train': Train}
 
     def generate(self, size):
         self.size = size
@@ -18,11 +17,12 @@ class Container:
             self.transports.append(random.choice(transport_types)().generate())
 
     def read(self, path):
+
         with open(path, 'r') as fin:
             self.size = int(fin.readline())
             for i in range(self.size):
                 line = fin.readline().split()
-                self.transports.append(str_to_transport[line[0]](line[1:]))
+                self.transports.append(self.str_to_transport[line[0]](line[1:]))
 
     def write(self, path):
         with open(path, 'w') as fout:
