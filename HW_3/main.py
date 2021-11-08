@@ -15,8 +15,8 @@ def get_container():
         if not sys.argv[2].isdigit():
             raise InvalidArgsError("After '-n'  you must enter positive number")
         size = int(sys.argv[2])
-        if size < 1 or size > 10000:
-            raise InvalidArgsError("Size must be in range [1, 10000]")
+        if size < 0 or size > 10000:
+            raise InvalidArgsError("Size must be in range [0, 10000]")
         result.generate(size)
     else:
         raise InvalidArgsError(f"Excepted flag '-n' or '-f', got '{sys.argv[1]}'")
