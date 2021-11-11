@@ -1,0 +1,23 @@
+struct transport {
+union: 8 [0]
+enum type: 4 [8]
+int velocity: 4 [12]
+double distance: 8 [16]
+
+struct container {
+int size: 4 [0]
+transports** 8 [4]
+}
+
+struct plane {
+int maxDistance: 4 [0]
+int capacity: 4[4]
+
+struct ship {
+enum shipType: 8 [0]
+int displacement: 4 [8]
+}
+
+struct train {
+int carsNumber: 4 [0]
+}
